@@ -16,56 +16,36 @@ const navigation = [
     title: 'Introduction',
     links: [
       { title: 'Getting started', href: '/' },
-      { title: 'Installation', href: '/docs/installation' },
+    ],
+  },
+  {
+    title: 'Tutorials',
+    links: [
+      { title: 'PiAware', href: '/docs/pi-aware' },
+      { title: 'TAK Plugins', href: '/docs/writing-plugins' },
+      { title: 'AI/ML Computer Vision', href: '/docs/temporal-paradoxes' },
+      { title: 'Scholarship Challenge', href: '/docs/testing' },
+      
     ],
   },
   {
     title: 'Core concepts',
     links: [
-      { title: 'Understanding caching', href: '/docs/understanding-caching' },
+      { title: 'Team Awareness Kit', href: '/docs/understanding-caching' },
       {
-        title: 'Predicting user behavior',
+        title: 'Programming with Python',
         href: '/docs/predicting-user-behavior',
       },
-      { title: 'Basics of time-travel', href: '/docs/basics-of-time-travel' },
+      { title: 'AI/ML Building Blocks', href: '/docs/basics-of-time-travel' },
       {
         title: 'Introduction to string theory',
         href: '/docs/introduction-to-string-theory',
       },
-      { title: 'The butterfly effect', href: '/docs/the-butterfly-effect' },
+      { title: 'Drones 101', href: '/docs/the-butterfly-effect' },
     ],
   },
-  {
-    title: 'Advanced guides',
-    links: [
-      { title: 'PiAware', href: '/docs/pi-aware' },
-      { title: 'Writing plugins', href: '/docs/writing-plugins' },
-      { title: 'Temporal paradoxes', href: '/docs/temporal-paradoxes' },
-      { title: 'Testing', href: '/docs/testing' },
-      { title: 'Compile-time caching', href: '/docs/compile-time-caching' },
-      {
-        title: 'Predictive data generation',
-        href: '/docs/predictive-data-generation',
-      },
-    ],
-  },
-  {
-    title: 'API reference',
-    links: [
-      { title: 'CacheAdvance.predict()', href: '/docs/cacheadvance-predict' },
-      { title: 'CacheAdvance.flush()', href: '/docs/cacheadvance-flush' },
-      { title: 'CacheAdvance.revert()', href: '/docs/cacheadvance-revert' },
-      { title: 'CacheAdvance.regret()', href: '/docs/cacheadvance-regret' },
-    ],
-  },
-  {
-    title: 'Contributing',
-    links: [
-      { title: 'How to contribute', href: '/docs/how-to-contribute' },
-      { title: 'Architecture guide', href: '/docs/architecture-guide' },
-      { title: 'Design principles', href: '/docs/design-principles' },
-    ],
-  },
+  
+  
 ]
 
 function GitHubIcon(props) {
