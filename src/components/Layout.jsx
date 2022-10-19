@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
+import Image from 'next/image'
 
 import { Hero } from '@/components/Hero'
 import { Logo, Logomark } from '@/components/Logo'
@@ -77,7 +78,7 @@ function Header({ navigation }) {
   return (
     <header
       className={clsx(
-        'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8',
+        'sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75 sm:px-6 lg:px-8',
         isScrolled
           ? 'dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75'
           : 'dark:bg-transparent'
@@ -88,9 +89,9 @@ function Header({ navigation }) {
       </div>
       <div className="relative flex flex-grow basis-0 items-center">
         <Link href="/" aria-label="Home page">
-          <Logomark className="h-9 w-9 lg:hidden" />
-          <Logo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100 lg:block" />
-        </Link>
+          {/* <Logomark className="h-9 w-9 lg:hidden" /> */}
+          {/* <Logo className="hidden h-9 w-auto fill-slate-700 dark:fill-sky-100 lg:block" /> */}
+          <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 375 374.999991" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><g/><clipPath id="7cf07a3705"><path d="M 248 155.117188 L 359 155.117188 L 359 246.617188 L 248 246.617188 Z M 248 155.117188 " clipRule="nonzero"/></clipPath></defs><g clipPath="url(#7cf07a3705)"><path fill="#ff1616" d="M 344.199219 155.21875 L 314.84375 191.449219 L 348.496094 218.90625 L 336.417969 218.554688 L 304.359375 192.5625 L 334.625 155.195312 Z M 347.105469 246.617188 L 305.371094 213.015625 L 290.238281 231.828125 L 280.585938 231.902344 L 304.234375 202.523438 L 358.980469 246.617188 Z M 260.679688 155.394531 L 293.042969 181.460938 L 314.238281 155.117188 L 323.738281 155.117188 L 294.152344 191.957031 L 248.476562 155.144531 Z M 249.539062 246.617188 L 284.402344 203.988281 L 251.988281 177.769531 L 263.914062 177.769531 L 294.910156 202.902344 L 259.515625 246.617188 Z M 249.539062 246.617188 " fillOpacity="1" fillRule="nonzero"/></g><g fill="#ffffff" fillOpacity="1"><g transform="translate(6.023442, 247.617449)"><g><path d="M 52.960938 -69.492188 L -0.0976562 -69.492188 L -0.0976562 -47.121094 L 16.730469 -29.597656 L 17.226562 -29.597656 L 17.226562 -52.070312 L 52.960938 -52.070312 Z M 35.4375 -17.421875 L -0.0976562 -17.421875 L -0.0976562 0 L 52.960938 0 L 52.960938 -25.34375 L 36.332031 -39.003906 L 35.4375 -39.003906 Z M 35.4375 -17.421875 "/></g></g></g><g fill="#ffffff" fillOpacity="1"><g transform="translate(61.951859, 247.617449)"><g><path d="M 17.324219 -51.972656 L 17.324219 -0.0976562 L 34.546875 -0.0976562 L 34.546875 -51.972656 L 51.871094 -51.972656 L 51.871094 -69.292969 L 0 -69.292969 L 0 -51.972656 Z M 17.324219 -51.972656 "/></g></g></g><g fill="#ffffff" fillOpacity="1"><g transform="translate(116.791405, 247.617449)"><g><path d="M 51.179688 0 L 51.179688 -17.125 L 17.324219 -17.125 L 17.324219 -25.441406 L 45.238281 -25.441406 L 45.238281 -42.863281 L 17.324219 -42.863281 L 17.324219 -51.871094 L 51.179688 -51.871094 L 51.179688 -69.097656 L 0.0976562 -69.097656 L 0.0976562 -43.457031 L 8.710938 -36.332031 L 0.0976562 -25.441406 L 0.0976562 0 Z M 51.179688 0 "/></g></g></g><g fill="#ffffff" fillOpacity="1"><g transform="translate(171.037015, 247.617449)"><g><path d="M 29.996094 -51.972656 L 29.996094 -0.0976562 L 47.320312 -0.0976562 L 47.320312 -51.972656 L 59.496094 -51.972656 L 59.496094 -0.0976562 L 77.511719 -0.0976562 L 77.511719 -69.292969 L 59.496094 -69.292969 L 47.320312 -54.445312 L 47.320312 -69.292969 L 29.996094 -69.292969 L 17.820312 -54.445312 L 17.820312 -69.292969 L 0 -69.292969 L 0 -0.0976562 L 17.820312 -0.0976562 L 17.820312 -51.972656 Z M 29.996094 -51.972656 "/></g></g></g></svg>         </Link>
       </div>
       <div className="-my-5 mr-6 sm:mr-8 md:mr-0">
         <Search />
