@@ -11,6 +11,10 @@ import { Prose } from '@/components/Prose'
 import { Search } from '@/components/Search'
 import { ThemeSelector } from '@/components/ThemeSelector'
 
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { UserButton } from "@clerk/clerk-react";
+
+
 const navigation = [
   {
     title: 'Introduction',
@@ -93,9 +97,8 @@ function Header({ navigation }) {
       </div>
       <div className="relative flex basis-0 justify-end gap-6 sm:gap-8 md:flex-grow">
         <ThemeSelector className="relative z-10" />
-        <Link href="https://github.com" className="group" aria-label="GitHub">
-          <GitHubIcon className="h-6 w-6 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />
-        </Link>
+        <UserButton />
+        
       </div>
     </header>
   )
@@ -168,6 +171,7 @@ export function Layout({ children, title, tableOfContents }) {
 
   return (
     <>
+    
       <Header navigation={navigation} />
 
       {isHomePage && <Hero />}

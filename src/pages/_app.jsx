@@ -6,6 +6,14 @@ import { Layout } from '@/components/Layout'
 import 'focus-visible'
 import '@/styles/tailwind.css'
 
+
+import { ClerkProvider, SignedIn, SignedOut, RedirectToSignIn, RedirectToSignUp } from '@clerk/nextjs';
+import { useRouter } from 'next/router';
+import {useEffect} from "react";
+
+const publicPages = [];
+
+
 function getNodeText(node) {
   let text = ''
   for (let child of node.children ?? []) {
@@ -61,15 +69,25 @@ export default function App({ Component, pageProps }) {
     ? collectHeadings(pageProps.markdoc.content)
     : []
 
+  
+  const { pathname } = useRouter();
+  const isPublicPage = publicPages.includes(pathname);
+
+
   return (
-    <>
+     <ClerkProvider {...pageProps}>
       <Head>
         <title>{pageTitle}</title>
         {description && <meta name="description" content={description} />}
       </Head>
-      <Layout title={title} tableOfContents={tableOfContents}>
-        <Component {...pageProps} />
-      </Layout>
-    </>
+      <SignedIn>
+        <Layout title={title} tableOfContents={tableOfContents}>
+          <Component {...pageProps} />
+        </Layout>
+      </SignedIn>
+      <SignedOut>
+        <RedirectToSignIn />
+      </SignedOut>
+    </ClerkProvider>
   )
-}
+  }
