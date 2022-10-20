@@ -1,7 +1,7 @@
 const { Analytics } = require('analytics')
 // or const Analytics = require('analytics').default
-const googleAnalytics = require('@analytics/google-analytics')
-const customerIo = require('@analytics/customerio')
+// const googleAnalytics = require('@analytics/google-analytics')
+// const customerIo = require('@analytics/customerio')
 
 const analytics = Analytics({
   app: 'my-app-name',
