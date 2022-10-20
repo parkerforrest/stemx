@@ -10,8 +10,14 @@ import '@/styles/tailwind.css'
 import { ClerkProvider, SignedIn, SignedOut, RedirectToSignIn, RedirectToSignUp } from '@clerk/nextjs';
 import { useRouter } from 'next/router';
 import {useEffect} from "react";
+import Router from 'next/router';
 
 const publicPages = [];
+
+Router.events.on("routeChangeComplete", (url) => {
+  // @ts-ignore window.analytics undefined below
+  window.analytics.page(url);
+});
 
 
 function getNodeText(node) {
@@ -77,8 +83,12 @@ export default function App({ Component, pageProps }) {
   return (
      <ClerkProvider {...pageProps}>
       <Head>
+        
         <title>{pageTitle}</title>
         {description && <meta name="description" content={description} />}
+
+
+        
       </Head>
       <SignedIn>
         <Layout title={title} tableOfContents={tableOfContents}>
