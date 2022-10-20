@@ -1,9 +1,38 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
+import { useUser, } from '@clerk/nextjs'
+import {useAnalytics} from '../components/analytics'
+import { useEffect } from 'react'
 
 export function Navigation({ navigation, className }) {
   let router = useRouter()
+
+  const { isLoaded, isSignedIn, user } = useUser()
+
+  const analytics = useAnalytics();
+
+  useEffect(() => {
+    if(user){
+      
+      analytics.identify(user.id, {
+        fullName: user.fullName,
+        email: user.primaryEmailAddress.emailAddress,	
+      });
+      
+      // analytics.page();
+    }
+  
+ 
+    
+  }, [user])
+
+  useEffect(() => {
+    router.events.on('routeChangeComplete',(route)=>{analytics.page()})
+  }, [])
+  
+  
+
 
   return (
     <nav className={clsx('text-base lg:text-sm', className)}>

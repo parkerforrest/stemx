@@ -12,13 +12,10 @@ import { useRouter } from 'next/router';
 import {useEffect} from "react";
 import Router from 'next/router';
 
+import {AnalyticsProvider} from '../components/analytics';
+
+
 const publicPages = [];
-
-Router.events.on("routeChangeComplete", (url) => {
-  // @ts-ignore window.analytics undefined below
-  window.analytics.page(url);
-});
-
 
 function getNodeText(node) {
   let text = ''
@@ -75,13 +72,15 @@ export default function App({ Component, pageProps }) {
     ? collectHeadings(pageProps.markdoc.content)
     : []
 
-  
+   
+
   const { pathname } = useRouter();
   const isPublicPage = publicPages.includes(pathname);
 
 
   return (
      <ClerkProvider {...pageProps}>
+      <AnalyticsProvider writeKey="kEjpLqjXfqMMjsP9SyFlUs47MXeYAFgw">
       <Head>
         
         <title>{pageTitle}</title>
@@ -98,6 +97,7 @@ export default function App({ Component, pageProps }) {
       <SignedOut>
         <RedirectToSignIn />
       </SignedOut>
+      </AnalyticsProvider>
     </ClerkProvider>
   )
   }
