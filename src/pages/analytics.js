@@ -6,14 +6,14 @@ const { Analytics } = require('analytics')
 const analytics = Analytics({
   app: 'my-app-name',
   version: 100,
-  plugins: [
-    googleAnalytics({
-      trackingId: 'UA-121991291',
-    }),
-    customerIo({
-      siteId: '123-xyz',
-    }),
-  ],
+  //   plugins: [
+  //     googleAnalytics({
+  //       trackingId: 'UA-121991291',
+  //     }),
+  //     customerIo({
+  //       siteId: '123-xyz',
+  //     }),
+  //   ],
 })
 
 /* Track a page view */
