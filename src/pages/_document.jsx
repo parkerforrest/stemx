@@ -1,5 +1,6 @@
 import { Head, Html, Main, NextScript } from 'next/document'
 
+
 const themeScript = `
   let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
 

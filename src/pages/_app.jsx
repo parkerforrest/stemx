@@ -15,6 +15,8 @@ import Router from 'next/router';
 import {AnalyticsProvider} from '../components/analytics';
 
 
+
+
 const publicPages = [];
 
 function getNodeText(node) {
