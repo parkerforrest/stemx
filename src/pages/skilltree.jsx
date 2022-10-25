@@ -10,30 +10,68 @@ import {
   const data = [
     {
       id: 'hello-world',
-      title: 'Hello World',
+      title: 'Create STEMx Account',
       tooltip: {
         content:
           'This node is the top most level, and will be unlocked, and ready to be clicked.',
       },
       children: [
         {
-          id: 'hello-sun',
-          title: 'Hello Sun',
+          id: 'pi-aware',
+          title: 'Pi-Aware',
           tooltip: {
             content:
               'This is a parent of the top node, and will locked while the parent isn’t in a selected state.',
           },
-          children: [],
+          children: [
+            {
+                id: 'pi-aware-one',
+                title: 'Ordered PiAware Kit',
+                tooltip: {
+                  content:
+                    'This is the child of ‘Hello World and the sibling of ‘Hello Sun’. Notice how the app takes care of the layout automatically? That’s why this is called Beautiful Skill Tree and not just ‘Skill Tree’. (Also the npm namespace had already been taken for the latter so (flick hair emoji).',
+                },
+                children: [],
+              }
+          ],
         },
         {
-          id: 'hello-stars',
-          title: 'Hello Stars',
+          id: 'tak-plugins',
+          title: 'TAK Plugins',
           tooltip: {
             content:
               'This is the child of ‘Hello World and the sibling of ‘Hello Sun’. Notice how the app takes care of the layout automatically? That’s why this is called Beautiful Skill Tree and not just ‘Skill Tree’. (Also the npm namespace had already been taken for the latter so (flick hair emoji).',
           },
-          children: [],
+          children: [
+            {
+                id: 'tak-plugins-one',
+                title: 'Joined TAK Server',
+                tooltip: {
+                  content:
+                    'This is the child of ‘Hello World and the sibling of ‘Hello Sun’. Notice how the app takes care of the layout automatically? That’s why this is called Beautiful Skill Tree and not just ‘Skill Tree’. (Also the npm namespace had already been taken for the latter so (flick hair emoji).',
+                },
+                children: [],
+              }
+          ],
         },
+        {
+            id: 'ai-ml',
+            title: 'AI/ML',
+            tooltip: {
+              content:
+                'This is the child of ‘Hello World and the sibling of ‘Hello Sun’. Notice how the app takes care of the layout automatically? That’s why this is called Beautiful Skill Tree and not just ‘Skill Tree’. (Also the npm namespace had already been taken for the latter so (flick hair emoji).',
+            },
+            children: [{
+                id: 'ai-ml-1',
+                title: 'Labeled Dataset',
+                tooltip: {
+                  content:
+                    'This is the child of ‘Hello World and the sibling of ‘Hello Sun’. Notice how the app takes care of the layout automatically? That’s why this is called Beautiful Skill Tree and not just ‘Skill Tree’. (Also the npm namespace had already been taken for the latter so (flick hair emoji).',
+                },
+                children: [],
+              },
+            ],
+          },
       ],
     },
   ];
