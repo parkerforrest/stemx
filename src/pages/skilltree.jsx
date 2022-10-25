@@ -3,11 +3,12 @@ import {
     SkillTree,
     SkillProvider,
     SkillType,
-    SkillGroupDataType
+    SkillGroupDataType, 
+    SavedDataType
   } from 'beautiful-skill-tree';
   import { useAuth } from '@clerk/nextjs'
 import supabase from '../lib/supabaseClient'
-
+import TodoList from '../components/TodoList';
 
   const data = [
     {
@@ -78,10 +79,10 @@ import supabase from '../lib/supabaseClient'
     },
   ];
 
+
   export default function SkillTreePage(){
 
     const { getToken } = useAuth()
-
     const fetchData = async () => {
       // TODO #1: Replace with your JWT template name
       const token = await getToken({ template: 'supabase' })
@@ -95,6 +96,7 @@ import supabase from '../lib/supabaseClient'
       console.log(error);
   
       // TODO #3: Handle the response
+      
     }
 
 return <><SkillProvider>
@@ -110,6 +112,8 @@ return <><SkillProvider>
     </SkillTreeGroup>
 </SkillProvider><button type="button" onClick={fetchData}>
         Fetch data
-    </button></>
+    </button>
+    </>
+    
 
     }
