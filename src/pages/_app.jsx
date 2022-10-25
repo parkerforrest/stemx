@@ -7,14 +7,14 @@ import 'focus-visible'
 import '@/styles/tailwind.css'
 
 
-import { ClerkProvider, SignedIn, SignedOut, RedirectToSignIn, RedirectToSignUp } from '@clerk/nextjs';
+import { ClerkProvider, SignedIn, SignedOut, RedirectToSignIn, RedirectToSignUp, useAuth } from '@clerk/nextjs';
 import { useRouter } from 'next/router';
 import {useEffect} from "react";
 import Router from 'next/router';
 
 import {AnalyticsProvider} from '../components/analytics';
 
-
+import supabase from '../lib/supabaseClient'
 
 
 const publicPages = [];
@@ -74,13 +74,28 @@ export default function App({ Component, pageProps }) {
     ? collectHeadings(pageProps.markdoc.content)
     : []
 
-   
-
   const { pathname } = useRouter();
   const isPublicPage = publicPages.includes(pathname);
 
+  // Added below for supabase integration
+  // const { getToken } = useAuth()
+
+  // const fetchData = async () => {
+  //   // TODO #1: Replace with your JWT template name
+  //   const token = await getToken({ template: 'supabase' })
+
+  //   supabase.auth.setAuth(token)
+
+  //   // TODO #2: Replace with your database table name
+  //   const { data, error } = await supabase.from('your_table').select()
+
+  //   // TODO #3: Handle the response
+  // }
+
 
   return (
+
+    
      <ClerkProvider {...pageProps}>
       <AnalyticsProvider writeKey="kEjpLqjXfqMMjsP9SyFlUs47MXeYAFgw">
       <Head>
@@ -95,6 +110,8 @@ export default function App({ Component, pageProps }) {
         <Layout title={title} tableOfContents={tableOfContents}>
           <Component {...pageProps} />
         </Layout>
+       
+        
       </SignedIn>
       <SignedOut>
         <RedirectToSignIn />

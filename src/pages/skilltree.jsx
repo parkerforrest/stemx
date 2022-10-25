@@ -5,6 +5,8 @@ import {
     SkillType,
     SkillGroupDataType
   } from 'beautiful-skill-tree';
+  import { useAuth } from '@clerk/nextjs'
+import supabase from '../lib/supabaseClient'
 
 
   const data = [
@@ -63,7 +65,7 @@ import {
             },
             children: [{
                 id: 'ai-ml-1',
-                title: 'Labeled Dataset',
+                title: 'Labeled data',
                 tooltip: {
                   content:
                     'This is the child of ‘Hello World and the sibling of ‘Hello Sun’. Notice how the app takes care of the layout automatically? That’s why this is called Beautiful Skill Tree and not just ‘Skill Tree’. (Also the npm namespace had already been taken for the latter so (flick hair emoji).',
@@ -78,18 +80,36 @@ import {
 
   export default function SkillTreePage(){
 
-return <SkillProvider>
-  <SkillTreeGroup>
-    {({ skillCount }) => (
-      <SkillTree
-        treeId="first-tree"
-        title="Skill Tree"
-        data={data}
-        collapsible
-        description="My first skill tree"
-      />
-    )}
+    const { getToken } = useAuth()
+
+    const fetchData = async () => {
+      // TODO #1: Replace with your JWT template name
+      const token = await getToken({ template: 'supabase' })
+  
+      supabase.auth.setSession(token)
+  
+      // TODO #2: Replace with your database table name
+      const { data, error } = await supabase.from('skilltree').select()
+
+      console.log(data);
+      console.log(error);
+  
+      // TODO #3: Handle the response
+    }
+
+return <><SkillProvider>
+    <SkillTreeGroup>
+        {({ skillCount }) => (
+            <SkillTree
+                treeId="first-tree"
+                title="Skill Tree"
+                data={data}
+                collapsible
+                description="My first skill tree" />
+        )}
     </SkillTreeGroup>
-</SkillProvider>
+</SkillProvider><button type="button" onClick={fetchData}>
+        Fetch data
+    </button></>
 
     }
