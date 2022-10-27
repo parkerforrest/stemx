@@ -104,11 +104,50 @@ function handleSave(storage, treeId, skills) {
 }
 
 export default function SkillTreePage() {
-  const userID = axios.get('/api/user').then((response) => {
-    console.log(response.data)
-  })
+  const { isSignedIn, sessionId, userId } = useAuth()
+  console.log(isSignedIn, sessionId, userId)
+
+  // make new row in supabase // This is untested but cool build
+  const [userSkills, setUserSkills] = useState(null)
+  const [userSkillsLoaded, setUserSkillsLoaded] = useState(false)
+
+  useEffect(() => {
+    async function fetchUserSkills() {
+      const { data, error } = await supabase
+        .from('user_skills')
+        .select('*')
+        .eq('user_id', userId)
+      if (error) {
+        console.log('error', error)
+      } else {
+        console.log('data', data)
+        setUserSkills(data)
+        setUserSkillsLoaded(true)
+      } // end else
+    } // end fetchUserSkills
+    fetchUserSkills()
+    console.log('could it be????')
+    console.log(userId)
+  }, [userId])
+
+  const addData = async () => {
+    const { data, error } = await supabase
+      .from('users')
+      .insert([{ userId }, { helloWorld }])
+
+    console.log(error)
+  }
+
+  // useEffect(() => {
+  //   const fetchUserID = axios.get('/api/user').then((response) => {
+  //     console.log(response.data)
+  //     setUserID(response.data)
+  //   })
+  //   // fetchUserID()
+  // }, [])
 
   const { getToken } = useAuth()
+  const helloWorld = 'not selected'
 
   const fetchData = async () => {
     // TODO #1: Replace with your JWT template name
@@ -125,13 +164,17 @@ export default function SkillTreePage() {
     // TODO #3: Handle the response
   }
 
+  // add new row to database
+
   // Defining User Skill Tree node status
   const [fetchError, setFetchError] = useState(null)
   const [tree, setTree] = useState(null)
 
   useEffect(() => {
-    const fetchUserTreeState = async () => {
-      const { data, error } = await supabase.from('skilltree').select()
+    async function addUser() {
+      const { data, error } = await supabase
+        .from('users')
+        .insert([{ userId }, { helloWorld }])
 
       if (error) {
         setFetchError('Could not fetch user skill tree.')
@@ -143,9 +186,10 @@ export default function SkillTreePage() {
         setFetchError(null)
       }
     }
-    fetchUserTreeState()
-    console.log('user tree fetched')
-  }, [])
+    addUser()
+    console.log(userId)
+    console.log('user added')
+  }, [userId])
 
   return (
     <>
@@ -164,7 +208,7 @@ export default function SkillTreePage() {
           )}
         </SkillTreeGroup>
       </SkillProvider>
-      <button type="button" onClick={fetchData}>
+      <button type="button" onClick={addData}>
         Fetch data
       </button>
       <div>
