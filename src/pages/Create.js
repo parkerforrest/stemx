@@ -9,7 +9,6 @@ const Create = () => {
   const [formError, setFormError] = useState([])
 
   const { isSignedIn, sessionId, userId } = useAuth()
-  console.log(isSignedIn, sessionId, userId)
 
   const handleSubmit = async (e) => {
     e.preventDefault()

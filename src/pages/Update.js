@@ -35,14 +35,14 @@ const Update = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title</label>
+        <label htmlFor="title">Node Name</label>
         <input
           type="text"
           id="title"
           value={nodeName}
           onChange={(e) => setNodeName(e.target.value)}
         />
-        <label htmlFor="method">Method</label>
+        <label htmlFor="method">Node State</label>
         <input
           type="checkbox"
           id="method"
