@@ -117,6 +117,8 @@ export default function SkillTreePage() {
     return <>Loading Skills...</>
   }
 
+  // checking if i can fix redirect by rolling back code
+
   return (
     <>
       <SkillProvider>
