@@ -25,4 +25,5 @@ export default withClerkMiddleware((req) => {
 })
 
 // Stop Middleware running on static files like images
+// text
 export const config = { matcher: '/((?!.*\\.).*)' }
