@@ -1,5 +1,5 @@
 ---
-title: Writing plugins
+title: TAK Plugins
 description: Quidem magni aut exercitationem maxime rerum eos.
 ---
 

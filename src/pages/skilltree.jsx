@@ -10,24 +10,22 @@ const data = [
     id: 'hello-world',
     title: 'Create STEMx Account',
     tooltip: {
-      content:
-        'This node is the top most level, and will be unlocked, and ready to be clicked.',
+      content: 'Unlock this badge by creating an account on STEMx',
     },
     children: [
       {
         id: 'pi-aware',
         title: 'Pi-Aware',
         tooltip: {
-          content:
-            'This is a parent of the top node, and will locked while the parent isn’t in a selected state.',
+          content: 'Unlock this badge by completing the Pi-Aware tutorial',
         },
         children: [
           {
             id: 'pi-aware-one',
-            title: 'Ordered PiAware Kit',
+            title: 'PiAware Ninja',
             tooltip: {
               content:
-                'This is the child of ‘Hello World and the sibling of ‘Hello Sun’. Notice how the app takes care of the layout automatically? That’s why this is called Beautiful Skill Tree and not just ‘Skill Tree’. (Also the npm namespace had already been taken for the latter so (flick hair emoji).',
+                'Unlock this badge by sending a message from your PiAware kit',
             },
             children: [],
           },
@@ -37,16 +35,14 @@ const data = [
         id: 'tak-plugins',
         title: 'TAK Plugins',
         tooltip: {
-          content:
-            'This is the child of ‘Hello World and the sibling of ‘Hello Sun’. Notice how the app takes care of the layout automatically? That’s why this is called Beautiful Skill Tree and not just ‘Skill Tree’. (Also the npm namespace had already been taken for the latter so (flick hair emoji).',
+          content: 'Unlock this badge by completing the TAK Plugins tutorial',
         },
         children: [
           {
             id: 'tak-plugins-one',
             title: 'Joined TAK Server',
             tooltip: {
-              content:
-                'This is the child of ‘Hello World and the sibling of ‘Hello Sun’. Notice how the app takes care of the layout automatically? That’s why this is called Beautiful Skill Tree and not just ‘Skill Tree’. (Also the npm namespace had already been taken for the latter so (flick hair emoji).',
+              content: 'Unlock this badge by joining the STEMx TAK Server',
             },
             children: [],
           },
@@ -56,8 +52,7 @@ const data = [
         id: 'ai-ml',
         title: 'AI/ML',
         tooltip: {
-          content:
-            'This is the child of ‘Hello World and the sibling of ‘Hello Sun’. Notice how the app takes care of the layout automatically? That’s why this is called Beautiful Skill Tree and not just ‘Skill Tree’. (Also the npm namespace had already been taken for the latter so (flick hair emoji).',
+          content: 'Unlock this badge by completing the AI/ML tutorial',
         },
         children: [
           {
@@ -65,7 +60,7 @@ const data = [
             title: 'Labeled data',
             tooltip: {
               content:
-                'This is the child of ‘Hello World and the sibling of ‘Hello Sun’. Notice how the app takes care of the layout automatically? That’s why this is called Beautiful Skill Tree and not just ‘Skill Tree’. (Also the npm namespace had already been taken for the latter so (flick hair emoji).',
+                'Unlock this badge by labeling data for your AI/ML project',
             },
             children: [],
           },
