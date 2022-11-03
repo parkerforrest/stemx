@@ -1,5 +1,5 @@
 ---
-title: Temporal paradoxes
+title: AI/ML Computer Vision
 description: Quidem magni aut exercitationem maxime rerum eos.
 ---
 
