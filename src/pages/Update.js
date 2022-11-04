@@ -6,15 +6,10 @@ import { useAuth } from '@clerk/nextjs'
 const Update = () => {
   const { id } = useParams()
 
-  const [title, setTitle] = useState('')
-  const [method, setMethod] = useState('')
-  const [rating, setRating] = useState('')
-
   const [nodeName, setNodeName] = useState('')
   const [nodeState, setNodeState] = useState(false)
 
   const { isSignedIn, sessionId, userId } = useAuth()
-  console.log(isSignedIn, sessionId, userId)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -28,7 +23,7 @@ const Update = () => {
     }
 
     if (data) {
-      console.log(data)
+      console.log('hello there')
     }
   }
 

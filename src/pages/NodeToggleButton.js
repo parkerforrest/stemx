@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useAuth } from '@clerk/nextjs'
 
 import styled, { keyframes } from 'styled-components'
+import Link from 'next/link'
 
 const pulse = keyframes`
   0% {
@@ -104,14 +105,18 @@ const NodeToggleButton = (props) => {
     if (data) {
       console.log(data)
     }
+
+    window.location.href = '/skilltree'
   }
 
   return (
     <div>
       {savedData[badge(props)]?.nodeState === 'selected' ? (
-        <NiceButton>
-          Nice! You have already unlocked your {props.title} Badge!
-        </NiceButton>
+        <Link href="/skilltree">
+          <NiceButton>
+            Nice! You have already unlocked your {props.title} Badge!
+          </NiceButton>
+        </Link>
       ) : (
         <Button onClick={handleSubmit}>
           Click here to unlock your {props.title} Badge!
