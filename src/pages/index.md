@@ -10,7 +10,7 @@ Use the STEMx Resources to assemble your STEM Kits and make cool solutions. {% .
 
 {% quick-link title="Tutorials" icon="installation" href="/" description="Step-by-step guides to setting up your stem kits for your challenges." /%}
 
-{% quick-link title="Skill Tree" icon="presets" href="/" description="Level up your character to compete in events and scholarship challenges" /%}
+{% quick-link title="Skill Tree" icon="presets" href="/skilltree" description="Level up your character to compete in events and scholarship challenges" /%}
 
 {% quick-link title="Community" icon="plugins" href="/" description="Chat with your peers, teammates, and subject expert matter coaches." /%}
 

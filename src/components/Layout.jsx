@@ -84,7 +84,6 @@ function useSkillTreeState() {
         console.log(error)
       } else {
         setData(data)
-        console.log(data)
       }
       setLoading(false)
     }
@@ -288,7 +287,6 @@ export function Layout({ children, title, tableOfContents }) {
           </div>
         </div>
 
-        {console.log(title)}
         <div className="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pr-0 lg:pl-8 xl:px-16">
           <article>
             {(title || section) && (

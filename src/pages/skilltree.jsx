@@ -1,5 +1,5 @@
 import { SkillTreeGroup, SkillTree, SkillProvider } from 'beautiful-skill-tree'
-import { useAuth } from '@clerk/nextjs'
+import { useAuth, useUser } from '@clerk/nextjs'
 import supabase from '../lib/supabaseClient'
 import Update from './Update'
 
@@ -85,7 +85,6 @@ function useSkillTreeState() {
         console.log(error)
       } else {
         setData(data)
-        console.log(data)
       }
       setLoading(false)
     }
@@ -108,6 +107,8 @@ function useSkillTreeState() {
 export default function SkillTreePage() {
   const { savedData, loading } = useSkillTreeState()
 
+  const { isLoaded, isSignedIn, user } = useUser()
+
   if (loading) {
     return <>Loading Skills...</>
   }
@@ -119,7 +120,8 @@ export default function SkillTreePage() {
           {({ skillCount }) => (
             <SkillTree
               treeId="first-tree"
-              title="Skill Tree"
+              // title is user's name plus skill tree
+              title={`${user.firstName}'s Skill Tree`}
               data={data}
               collapsible
               description="My first skill tree"
@@ -129,7 +131,7 @@ export default function SkillTreePage() {
         </SkillTreeGroup>
       </SkillProvider>
 
-      <Update />
+      {/* Add this update component if you want to manually toggle nodes from UI <Update /> */}
     </>
   )
 }
