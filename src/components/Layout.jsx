@@ -38,25 +38,22 @@ const navigation = [
     title: 'Tutorials',
     links: [
       { title: 'PiAware', href: '/docs/pi-aware' },
+      {
+        title: 'TAK Server on Raspberry Pi',
+        href: '/docs/tak-server-on-raspberry-pi',
+      },
       { title: 'TAK Plugins', href: '/docs/tak-plugins' },
       { title: 'AI/ML Computer Vision', href: '/docs/ai-ml' },
-      { title: 'Scholarship Challenge', href: '/docs/testing' },
+      { title: 'Scholarship Challenge', href: '/docs/scholarship-challenge' },
     ],
   },
   {
-    title: 'Core concepts',
+    title: 'Events and STEM Kits',
     links: [
-      { title: 'Team Awareness Kit', href: '/docs/understanding-caching' },
       {
-        title: 'Programming with Python',
-        href: '/docs/predicting-user-behavior',
+        title: 'Search and Rescue with TAK',
+        href: '/docs/search-and-rescue-with-tak',
       },
-      { title: 'AI/ML Building Blocks', href: '/docs/basics-of-time-travel' },
-      {
-        title: 'Introduction to string theory',
-        href: '/docs/introduction-to-string-theory',
-      },
-      { title: 'Drones 101', href: '/docs/the-butterfly-effect' },
     ],
   },
 ]
@@ -306,10 +303,10 @@ export function Layout({ children, title, tableOfContents }) {
             <Prose>{children}</Prose>
           </article>
           {title === 'PiAware' && <NodeToggleButton title={title} />}
-          {title === 'TAK Plugins' && <NodeToggleButton title={title} />}
+          {/* {title === 'TAK Plugins' && <NodeToggleButton title={title} />}
           {title === 'AI/ML Computer Vision' && (
             <NodeToggleButton title={title} />
-          )}
+          )} */}
           <dl className="mt-12 flex border-t border-slate-200 pt-6 dark:border-slate-800">
             {previousPage && (
               <div>
