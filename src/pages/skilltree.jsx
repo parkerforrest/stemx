@@ -121,7 +121,7 @@ export default function SkillTreePage() {
             <SkillTree
               treeId="first-tree"
               // title is user's name plus skill tree
-              title={`${user.firstName}'s Skill Tree`}
+              title={`Your Skill Tree`}
               data={data}
               collapsible
               description="My first skill tree"
