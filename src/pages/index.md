@@ -4,7 +4,11 @@ pageTitle: STEMx
 description: Cache every single thing your app could ever do ahead of time, so your code never even has to run at all.
 ---
 
-Use the STEMx Resources to assemble your STEM Kits and make cool solutions. {% .lead %}
+STEMx helps students begin their journey on the path to an exciting STEM career.
+
+Programs across the country have collaborated and aligned to seamlessly guide motivated students from highschool through college and to rewarding STEM careers in Civilian Defense corps.
+
+STEMx kicks off that career path by providing STEM Kits and Challenge Events free of charge to student participants that include all the hardware, software, and expert instruction they need to grow their STEM skill sets by solving real world challenges related to public safety and disaster relief. {% .lead %}
 
 {% quick-links %}
 
