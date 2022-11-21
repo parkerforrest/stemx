@@ -241,7 +241,10 @@ function useTableOfContents(tableOfContents) {
   return currentSection
 }
 
-const handleUpload = async (e) => {
+const handleUpload = async (e, userId) => {
+  // const { user } = useAuth()
+  // console.log(user.uid)
+
   let file
 
   if (e.target.files) {
@@ -254,13 +257,32 @@ const handleUpload = async (e) => {
 
   if (data) {
     console.log(data)
-    console.log(data.fileName)
+    handleAdd(data.path, userId)
+  } else if (error) {
+    console.log(error)
+  }
+}
+
+// handler to add a row to the images table in the database
+const handleAdd = async (name, userId) => {
+  const { data, error } = await supabase.from('images').insert([
+    {
+      userId: userId,
+      image:
+        'https://ujrhqxjizrhcnlnbaoos.supabase.co/storage/v1/object/public/images-bucket/' +
+        name,
+    },
+  ])
+
+  if (data) {
+    console.log(data)
   } else if (error) {
     console.log(error)
   }
 }
 
 export function Layout({ children, title, tableOfContents }) {
+  const { userId } = useAuth()
   let router = useRouter()
   let isHomePage = router.pathname === '/'
   let allLinks = navigation.flatMap((section) => section.links)
@@ -330,7 +352,7 @@ export function Layout({ children, title, tableOfContents }) {
                 className="block w-auto cursor-pointer rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-900 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:placeholder-gray-400"
                 id="file_input"
                 onChange={(e) => {
-                  handleUpload(e) // 👈 this will trigger when user selects the file.
+                  handleUpload(e, userId) // 👈 this will trigger when user selects the file.
                 }}
               />
               <img src="https://ujrhqxjizrhcnlnbaoos.supabase.co/storage/v1/object/public/images-bucket/public/metadata.jpg" />
