@@ -241,6 +241,25 @@ function useTableOfContents(tableOfContents) {
   return currentSection
 }
 
+const handleUpload = async (e) => {
+  let file
+
+  if (e.target.files) {
+    file = e.target.files[0]
+  }
+
+  const { data, error } = await supabase.storage
+    .from('images-bucket')
+    .upload('public/' + file?.name, file, File)
+
+  if (data) {
+    console.log(data)
+    console.log(data.fileName)
+  } else if (error) {
+    console.log(error)
+  }
+}
+
 export function Layout({ children, title, tableOfContents }) {
   let router = useRouter()
   let isHomePage = router.pathname === '/'
@@ -303,6 +322,20 @@ export function Layout({ children, title, tableOfContents }) {
             <Prose>{children}</Prose>
           </article>
           {title === 'PiAware' && <NodeToggleButton title={title} />}
+          {title === 'AI/ML Computer Vision' && (
+            <>
+              <input
+                type="file"
+                accept="image/*"
+                className="block w-auto cursor-pointer rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-900 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:placeholder-gray-400"
+                id="file_input"
+                onChange={(e) => {
+                  handleUpload(e) // 👈 this will trigger when user selects the file.
+                }}
+              />
+              <img src="https://ujrhqxjizrhcnlnbaoos.supabase.co/storage/v1/object/public/images-bucket/public/metadata.jpg" />
+            </>
+          )}
           {/* {title === 'TAK Plugins' && <NodeToggleButton title={title} />}
           {title === 'AI/ML Computer Vision' && (
             <NodeToggleButton title={title} />
