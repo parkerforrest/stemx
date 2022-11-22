@@ -245,21 +245,34 @@ const handleUpload = async (e, userId) => {
   // const { user } = useAuth()
   // console.log(user.uid)
 
-  let file
-
-  if (e.target.files) {
-    file = e.target.files[0]
+  const files = e.target.files
+  const fileList = []
+  for (let i = 0; i < files.length; i++) {
+    fileList.push(files[i])
   }
+  console.log(fileList)
 
-  const { data, error } = await supabase.storage
-    .from('images-bucket')
-    .upload('public/' + file?.name, file, File)
+  for (let i = 0; i < fileList.length; i++) {
+    let file
 
-  if (data) {
-    console.log(data)
-    handleAdd(data.path, userId)
-  } else if (error) {
-    console.log(error)
+    if (fileList[i]) {
+      file = fileList[i]
+      console.log(file)
+      console.log(file?.name)
+      console.log(userId)
+    }
+
+    const { data, error } = await supabase.storage
+      .from('images-bucket')
+      .upload('public/' + file?.name, file, File)
+
+    if (data) {
+      console.log(data)
+      handleAdd(data.path, userId)
+    } else if (error) {
+      console.log(error)
+      console.log(data)
+    }
   }
 }
 
@@ -346,16 +359,17 @@ export function Layout({ children, title, tableOfContents }) {
           {title === 'PiAware' && <NodeToggleButton title={title} />}
           {title === 'AI/ML Computer Vision' && (
             <>
-              <input
-                type="file"
-                accept="image/*"
-                className="block w-auto cursor-pointer rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-900 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:placeholder-gray-400"
-                id="file_input"
-                onChange={(e) => {
-                  handleUpload(e, userId) // 👈 this will trigger when user selects the file.
-                }}
-              />
-              <img src="https://ujrhqxjizrhcnlnbaoos.supabase.co/storage/v1/object/public/images-bucket/public/metadata.jpg" />
+              <form id="file-catcher">
+                <input
+                  id="file_input"
+                  type="file"
+                  className="block w-auto cursor-pointer rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-900 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 dark:placeholder-gray-400"
+                  multiple
+                  onChange={(e) => {
+                    handleUpload(e, userId)
+                  }}
+                />
+              </form>
             </>
           )}
           {/* {title === 'TAK Plugins' && <NodeToggleButton title={title} />}
