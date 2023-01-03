@@ -27,7 +27,7 @@ Other operating system requirements can be found [towards the bottom of the link
    On the home *Projects* page, select *More Actions* dropdown and select *SDK Manager* to open the settings dialog.
    On the new dialog `Appearance & Behavior > System Settings > Android SDK` page, select *Android 5.0 (Lollipop) API Level 21* then click *Apply* to download.
 
-   ![Android Studio SDK Manager from home page](../img/android_studio_home_sdk_manager.png)
+   ![Android Studio SDK Manager from home page](https://i.imgur.com/qaQU1AS.png)
 
 2. Quick Documentation on Mouse Hover. *As a convenience functionality of the Android Studio IDE enabling this feature will allow you to hover your mouse cursor over function calls, constants or object instances to display a tooltip showing the Java Documentation for the code item.*
    On the home *Customize* page, select "All settings..." to open the settings dialog.
