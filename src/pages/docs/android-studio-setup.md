@@ -33,7 +33,7 @@ Other operating system requirements can be found [towards the bottom of the link
    On the home *Customize* page, select "All settings..." to open the settings dialog.
    On the new dialog `Editor > Code Editing` page, ensure the "Show quick documentation on hover" option is selected under the *Quick Documentation* section then click *Apply* if necessary.
 
-   ![Android Studio quick documentation on hover setting from home page](../img/android_studio_home_setting_quick_doc.png)
+   ![Android Studio quick documentation on hover setting from home page](https://i.imgur.com/9YPcGSy.png)
 
 ## Getting Familiar with Android Studio
 
