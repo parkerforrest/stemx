@@ -56,6 +56,15 @@ const navigation = [
       },
     ],
   },
+  {
+    title: 'Android Team Awareness Kit',
+    links: [
+      {
+        title: 'Android Studio Setup',
+        href: '/docs/android-studio-setup',
+      },
+    ],
+  },
 ]
 
 function GitHubIcon(props) {
