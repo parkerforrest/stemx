@@ -71,6 +71,14 @@ const navigation = [
         title: 'TAK Overview',
         href: '/docs/tak-overview',
       },
+      {
+        title: 'TAK Install',
+        href: '/docs/install-and-run-atak-civ',
+      },
+      {
+        title: 'TAK Plugins',
+        href: '/docs/develop-and-run-atak-plugins',
+      },
     ],
   },
 ]
