@@ -1,10 +1,8 @@
 # Android Quick Start Fundamentals
 
-This section will introduce some common Android components and concepts that will help you quickly start understanding existing ATAK Plugins and wriiting your own. The [Android developer website docs](https://developer.android.com/docs) cover all topics discussed in this section in greater detail and will stay up to date with the latest changes; however, ATAK plugin development is not like the traditional "Build your first app" example. In this section we will try to guide you to the essential pages within the developer docs to cover to provide a foundation for a basic understanding of Android principles.
+This section will introduce some common Android components and concepts that will help you quickly start understanding existing ATAK Plugins and writing your own. The [Android developer website docs](https://developer.android.com/docs) cover all topics discussed in this section in greater detail and will stay up to date with the latest changes; however, ATAK plugin development is not like the traditional "Build your first app" example. In this section we will try to guide you to the essential pages within the developer docs to cover to provide a foundation for a basic understanding of Android principles.
 
 - [Official Android Developer Guides](https://developer.android.com/guide)
-
-[TOC]
 
 ___
 
@@ -22,7 +20,7 @@ Activities are the entry point for an application's interaction with the user. I
 
 #### 1.1.1 [View Models](https://developer.android.com/topic/libraries/architecture/viewmodel)
 
-A fairly straight forward class to provide data persistence to enahnce your activities by caching data through UI changes such as screen rotations.
+A fairly straight forward class to provide data persistence to enhance your activities by caching data through UI changes such as screen rotations.
 
 #### 1.1.2 [Fragments](https://developer.android.com/guide/fragments) & [Fragment Lifecycle](https://developer.android.com/guide/fragments/lifecycle)
 
@@ -30,4 +28,4 @@ Another enhancement to your application user interface would be the utilization 
 
 ### 1.2 [Services](https://developer.android.com/guide/components/services) & [Service Lifecycle](https://developer.android.com/guide/components/services#Lifecycle)
 
-There are a variety of different types of services, but they all essentially provide a mechanism for your application to perform long-running operations in the background as they do not provide a user interface element. They are generally more resiliant to users navigating between applications as their lifecycle is deteremined by other factors. Understand the difference between Foreground, Background, and Bound services weighing the pros and cons of using each one.
+There are a variety of different types of services, but they all essentially provide a mechanism for your application to perform long-running operations in the background as they do not provide a user interface element. They are generally more resilient to users navigating between applications as their lifecycle is determined by other factors. Understand the difference between Foreground, Background, and Bound services weighing the pros and cons of using each one.
