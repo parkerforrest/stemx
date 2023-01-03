@@ -2,8 +2,6 @@
 
 This section will cover how to run an existing ATAK Plugin and how to create your own ATAK Plugin from scratch (the provided template).
 
-[TOC]
-
 ------
 
 ## Deploying / Running an ATAK Plugin
@@ -96,7 +94,7 @@ When your desired plugin to run is properly located in your downloaded ATAK-CIV 
 5. Open the *Run Configurations* dropdown menu and select "Edit Configurations". A dialog like the one shown below should appear.
    The menu is located in the upper right toolbar to the left of the *Target Device menu* and the play button.
 
-   ![Android Studio Plugin Run Configuration](../img/atak_plugin_config_android_studio.png)
+   ![Android Studio Plugin Run Configuration](https://i.imgur.com/XyqNnuQ.png)
 
 6. Set `Launch Options > Launch` dropdown selector to the value "Nothing" and press the *Apply* button.
    See the figure above for an example
@@ -107,7 +105,7 @@ When your desired plugin to run is properly located in your downloaded ATAK-CIV 
 
 9. Click the *Play* button in Android Studio and check the "Plugins" menu in the side drawer and if the plugin name should be listed like the image below shows the "Hello World Tool".
 
-   ![Hello World Tool loaded in ATAK](../img/hello_world_tool_plugin_loaded.png)
+   ![Hello World Tool loaded in ATAK](https://i.imgur.com/Y0Kxjxe.png)
 
 ------
 
@@ -142,7 +140,7 @@ Follow the steps below as a checklist of items every time you start developing a
 
 5. Follow [steps 2 - 4 in the Deploying / Running an ATAK Plugin](#Deploying-/-Running-an-ATAK-Plugin) to setup your plugins signing keys to allow it to build successfully.
 
-   ![ATAK Plugin Template File Changes](../img/plugin-template-change-files.png)
+   ![ATAK Plugin Template File Changes](https://i.imgur.com/5HW46TZ.png)
 
    *Use the figure above as a reference for key files / packages that need to be changed to match your plugin*
 
