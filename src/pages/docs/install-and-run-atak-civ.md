@@ -39,7 +39,7 @@ After successfully completing these steps your Android device is now ready to in
 
 3. Plugin your Android device and ensure "USB for file transfer" is enabled
 
-   ![Windows File Explorer load ATAK APK onto Android](../img/windows_atak_apk_download.png)
+   ![Windows File Explorer load ATAK APK onto Android](https://i.imgur.com/npVILQW.png)
 
    *Refer to this image for steps 4, 5, & 6.*
 
