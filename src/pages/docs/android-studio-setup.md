@@ -1,7 +1,5 @@
 # Android Studio Setup
 
-*Updated: 14 November 2022*
-
 This section will focus on installing the Android Studio Integrated Development Environment (IDE) and ensuring it is prepared for ATAK plugin development.
 
 ## Install Android Studio
