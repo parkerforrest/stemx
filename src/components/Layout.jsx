@@ -63,6 +63,14 @@ const navigation = [
         title: 'Android Studio Setup',
         href: '/docs/android-studio-setup',
       },
+      {
+        title: 'Android Basics',
+        href: '/docs/android-basics',
+      },
+      {
+        title: 'TAK Overview',
+        href: '/docs/tak-overview',
+      },
     ],
   },
 ]
